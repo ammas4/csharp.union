@@ -1,0 +1,18 @@
+/* хотим забирать из пакета не только managed библиотеки, но и unmanaged, и прочие файлы (из Content), добавляем GeneratePathProperty="true" */
+    <PackageReference Include="MyDomain.MyPackage" Version="1.0.0" GeneratePathProperty="true" />  	  
+    <Content Include="$(MyDomain_MyPackage)\content\**\*.*" CopyToOutputDirectory="PreserveNewest" /> /* точки меняем на нижние подчёркивания!! */
+    <Content Include="$(MyDomain_MyPackage)\content\cpp\cppLib1.dll"  CopyToOutputDirectory="PreserveNewest" Link="cppLib1.dll" /> /* тоже самое для одного файла */
+/*----*/
+  		
+    <PackageReference Include="Castle.Core" />  /* IOC для интеграции с С++ */
+    <PackageReference Include="Castle.Windsor" /> /* IOC для интеграции с С++ */
+	
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" /> 
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />	
+	
+    <PackageReference Include="NUnit.Framework" />
+	
+/* Графика (для WPF) */
+    <PackageReference Include="FirstFloor.ModernUI" /> /* Для расширенных контролов */
+    <PackageReference Include="Arction.WPF.LightningChartUltimate" /> /* Для графиков 2D/3D */
+    <PackageReference Include="GalaSoft.MvvmLight" /> /*Для трёхзвенной архитектуры */

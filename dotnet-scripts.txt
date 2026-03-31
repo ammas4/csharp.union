@@ -1,0 +1,37 @@
+# Скачать нугет пакет в локальное хранилище : 
+mkdir tmp
+cd tmp
+dotnet new console
+dotnet add package UsefulPackage --version 1.0.0
+cd ..
+REM rmdir tmp /q /s
+
+# Отправить пакет на сервер(при наличии доступа на запись) :
+dotnet nuget push C:\nuget-packages-to-push\MyPackage.1.0.0.nupkg -s <nuget_storage_url>
+
+# Восстановить все пакеты :
+dotnet restore --force-evaluate
+
+# Собрать решение :
+msbuild MySolution.sln /t:Rebuild /p:Configuration=Release /p:Platform=x64 /p:OutputPath=bin\Release
+
+#Собрать проект в кастомной конфигурации ReleaseCustomConf :
+msbuild Proj1\Proj1.csproj /t:Rebuild /p:Configuration=ReleaseCustomConf /p:Platform=x64 /p:OutputPath=bin\Release
+#Файл csproj должен содержать тег <Choose>-<When>-<Otherwise>
+#<Choose>
+#	<When Condition="'$(Configuration)' == 'ReleaseCustomConf'">
+#		<ItemGroup/>
+#	</When>
+#	<Otherwise>
+#		<ItemGroup/>
+#	</Otherwise>
+#</Choose> 
+#
+
+#Удалить все bin, obj директории :
+FOR /d /r . %%d IN (obj) DO @IF EXIST "%%d" rd /s /q "%%d"
+FOR /d /r . %%d IN (bin) DO @IF EXIST "%%d" rd /s /q "%%d"
+
+# Help :
+dotnet nuget --help
+dotnet msbuild --help
