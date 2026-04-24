@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GraphApp.CustomControls;
+using GraphApp.ViewModel.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GraphApp.CustomControls;
 
 namespace GraphApp
 {
@@ -24,11 +25,10 @@ namespace GraphApp
     /// </summary>
     public partial class MainWindow : INotifyPropertyChanged
     {
-        public MainWindow(UserTestControl userTestControl)
+        public MainWindow(IMainWindowModel model)
         {
+            DataContext = model;
             InitializeComponent();
-
-            this.DataContext = this; //!
             //_userTestControl3.Children.Add(userTestControl3);
         }
 

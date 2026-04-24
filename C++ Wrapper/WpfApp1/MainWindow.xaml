@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphApp"
+        xmlns:custom="clr-namespace:GraphApp.CustomControls" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <custom:UserTestControl2 Grid.Row="0" Grid.Column="0" />
         
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<Grid x:Name="_userTestControl3" x:FieldModifier="public" />-->
+
+        <!--<custom:UserTestControl Grid.Row="0" Grid.Column="0" DataContext="{Binding}"/>
+        <custom:UserTestControl2 Grid.Row="0" Grid.Column="1" DataContext="{Binding}"/>-->
+
+
     </Grid>
 </Window>

@@ -8,4 +8,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="C++ Wrapper\**" />
+    <EmbeddedResource Remove="C++ Wrapper\**" />
+    <None Remove="C++ Wrapper\**" />
+  </ItemGroup>
+
 </Project>
