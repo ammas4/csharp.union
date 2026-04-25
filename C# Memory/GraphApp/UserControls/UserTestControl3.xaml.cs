@@ -14,32 +14,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GraphApp.CustomControls;
 
-namespace GraphApp
+namespace GraphApp.UserControls
 {
-
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Interaction logic for UserTestControl3.xaml
     /// </summary>
-    public partial class MainWindow : INotifyPropertyChanged
+    public partial class UserTestControl3 : UserControl, INotifyPropertyChanged
     {
-        public MainWindow(UserTestControl userTestControl)
+        public UserTestControl3()
         {
             InitializeComponent();
-
-            this.DataContext = this; //!
-            //_userTestControl3.Children.Add(userTestControl3);
+            DataContext = this;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         private void NotifyPropertyChanged([CallerMemberName] string info = null)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
+        }
+
+        string _Text1;
+        public string Text1 { get => _Text1; set { _Text1 = value; NotifyPropertyChanged(); } }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

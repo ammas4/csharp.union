@@ -1,8 +1,10 @@
 # csharp.union
-Repo contains many code blocks for programming in C#
+Repo contains many blocks for programming in C# and wrapper for executing C++
 
-In ".\C++ Wrapper" folder exists solution "CppRunnerConsoleApp.sln", with three projects: 
-
-1) C++/CLI library with C++-native code inside, imitates algotithm, and CLI-wrapper, "CppCliLib"
-2) C# console application, which executes this C++ algorithm, "CsConsoleApp"
-3) C# WPF application, "GraphApp"
+In ".\C# Memory" there C# code:
+1) WPF simple application in WMMW architecture, named "GraphApp"
+2) Libraty and usefull classes, named "CSharpSystem"
+	
+In ".\C++ Wrapper" folder two projects: 
+1) C++/CLI library with C++-native code inside, imitates algotithm, and CLI-wrapper, named "CppCliLib"
+2) C# console  application, which executes this C++ algorithm, named "CsConsoleApp"

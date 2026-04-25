@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{59A8DA65-5E53-41B6-9075-EDB3F7F0CE72}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfApp1</RootNamespace>
-    <AssemblyName>WpfApp1</AssemblyName>
+    <RootNamespace>GraphApp</RootNamespace>
+    <AssemblyName>GraphApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -66,11 +66,31 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Converters\BoolToTextConverter.cs" />
+    <Compile Include="UserControls\UserTestControl.xaml.cs">
+      <DependentUpon>UserTestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserTestControl3.xaml.cs">
+      <DependentUpon>UserTestControl3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NotifyPropertyChangedUserControl.cs" />
+    <Compile Include="ViewModel\Abstract\IMainWindowModel.cs" />
+    <Compile Include="ViewModel\Abstract\ISecondViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowModel.cs" />
+    <Compile Include="ViewModel\SecondViewModel.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CustomControls\UserTestControl.xaml">
+    <Page Include="UserControls\UserTestControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserTestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserTestControl3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,8 +102,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CustomControls\UserTestControl.xaml.cs">
-      <DependentUpon>UserTestControl.xaml</DependentUpon>
+    <Compile Include="UserControls\UserTestControl2.xaml.cs">
+      <DependentUpon>UserTestControl2.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -91,6 +111,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ConsoleHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -117,5 +138,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

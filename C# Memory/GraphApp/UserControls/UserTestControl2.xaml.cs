@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,17 +14,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GraphApp.Model;
+using GraphApp.ViewModel.Abstract;
 
-namespace GraphApp.CustomControls
+namespace GraphApp.UserControls
 {
     /// <summary>
-    /// Interaction logic for UserTestControl.xaml
+    /// Interaction logic for UserTestControl2.xaml
     /// </summary>
-    public partial class UserTestControl : UserControl
+    public partial class UserTestControl2 : NotifyPropertyChangedUserControl
     {
-        public UserTestControl()
+        public UserTestControl2()
         {
             InitializeComponent();
         }
+
+        IMainWindowModel _model;
     }
 }

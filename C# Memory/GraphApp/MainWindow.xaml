@@ -1,0 +1,62 @@
+﻿<Window x:Class="GraphApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphApp"
+        xmlns:custom="clr-namespace:GraphApp.UserControls" 
+        xmlns:converters="clr-namespace:GraphApp.Model.Converters" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <converters:BoolToTextConverter x:Key="BoolToTextConverter" />
+    </Window.Resources>
+    <Grid>
+        <Border  Grid.Row="0" Grid.Column="0"
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="4"
+            Padding="5"
+            Margin="5">
+            <custom:UserTestControl />
+        </Border>
+        <Border  Grid.Row="0" Grid.Column="1"
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="4"
+            Padding="5"
+            Margin="5">
+            <custom:UserTestControl2/>
+        </Border>
+
+        <Border  Grid.Row="1" Grid.Column="0"
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="4"
+            Padding="5"
+            Margin="5">
+        </Border>
+
+        <Border  Grid.Row="1" Grid.Column="1"
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="4"
+            Padding="5"
+            Margin="5">
+        </Border>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--<custom:UserTestControl Grid.Row="0" Grid.Column="0" DataContext="{Binding}"/>
+        <custom:UserTestControl2 Grid.Row="0" Grid.Column="1" DataContext="{Binding}"/>-->
+
+
+    </Grid>
+</Window>
